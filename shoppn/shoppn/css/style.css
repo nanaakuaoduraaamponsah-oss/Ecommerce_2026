@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+--periwinkle: #dad8fb;
+--orchid: #9d41bc;
+--amber: #efca5a;
+--text-dark: #2e2a3a;
+--white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+color: var(--text-dark);
+background: var(--white);
+}
+
+.logo-cursive {
+font-family: 'Dancing Script', cursive;
+font-size: 2rem;
+font-weight: 700;
+color: var(--orchid);
+text-decoration: none;
+}
+
+/* ---------- TOP HEADER (app chrome, not landing page) ---------- */
+.app-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 14px 28px;
+background: var(--periwinkle);
+border-bottom: 3px solid var(--orchid);
+}
+
+.app-header .nav-links {
+display: flex;
+gap: 18px;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.app-header .nav-links a {
+text-decoration: none;
+color: var(--text-dark);
+font-weight: 500;
+}
+
+.app-header .nav-links a:hover { color: var(--orchid); }
+
+.header-icons {
+display: flex;
+align-items: center;
+gap: 18px;
+}
+
+.icon-btn {
+position: relative;
+display: inline-flex;
+color: var(--text-dark);
+text-decoration: none;
+border-radius: 50%;
+padding: 6px;
+background: rgba(157,65,188,0.08);
+}
+.icon-btn:hover { color: var(--orchid); }
+
+.cart-count {
+position: absolute;
+top: -6px;
+right: -10px;
+background: var(--amber);
+color: var(--text-dark);
+font-size: 11px;
+font-weight: 700;
+border-radius: 50%;
+width: 18px;
+height: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* ---------- LAYOUT: sidebar + main content ---------- */
+.app-body {
+display: flex;
+min-height: 70vh;
+}
+
+.sidebar {
+width: 220px;
+background: #faf9ff;
+border-right: 1px solid var(--periwinkle);
+padding: 20px 16px;
+}
+
+.sidebar h3 {
+color: var(--orchid);
+font-size: 1rem;
+margin-top: 0;
+}
+
+.sidebar-nav {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.nav-group-title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 8px;
+font-weight: 600;
+color: var(--text-dark);
+cursor: pointer;
+border-radius: 6px;
+transition: background 0.15s;
+}
+
+.nav-group-title:hover {
+background: var(--periwinkle);
+color: var(--orchid);
+}
+
+.nav-arrow {
+font-size: 0.7rem;
+transition: transform 0.2s;
+}
+
+.nav-group-items {
+list-style: none;
+margin: 0;
+padding: 0;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.25s ease;
+}
+
+.nav-group:hover .nav-group-items {
+  max-height: 400px; /* large enough to fit a long list */
+}
+
+.nav-group:hover .nav-arrow {
+transform: rotate(180deg);
+}
+
+.nav-group-items li {
+padding: 6px 8px 6px 18px;
+}
+
+.nav-group-items a {
+text-decoration: none;
+color: var(--text-dark);
+font-size: 0.92rem;
+}
+
+.nav-group-items a:hover {
+color: var(--orchid);
+}
+
+.nav-empty {
+color: #999;
+font-style: italic;
+font-size: 0.85rem;
+}
+.sidebar a {
+text-decoration: none;
+color: var(--text-dark);
+}
+
+.sidebar a:hover { color: var(--orchid); }
+
+.main-content {
+flex: 1;
+padding: 28px;
+}
+
+/* ---------- FOOTER ---------- */
+.app-footer {
+background: var(--text-dark);
+color: var(--periwinkle);
+padding: 28px;
+text-align: center;
+}
+
+.app-footer .logo-cursive { color: var(--amber); }
+
+.social-icons {
+margin-top: 14px;
+display: flex;
+justify-content: center;
+gap: 16px;
+}
+
+.social-icons a {
+color: var(--periwinkle);
+display: inline-flex;
+}
+
+.social-icons a:hover { color: var(--amber); }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+background: var(--orchid);
+color: var(--white);
+border: none;
+padding: 12px 28px;
+border-radius: 30px;
+font-weight: 600;
+text-decoration: none;
+display: inline-block;
+cursor: pointer;
+transition: background 0.2s;
+}
+
+.btn-primary:hover { background: #7e3298; }
+
+.btn-secondary {
+background: var(--amber);
+color: var(--text-dark);
+}
+
+.btn-secondary:hover { background: #e0b73f; }
+
+/* ---------- LANDING PAGE ---------- */
+.landing {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: linear-gradient(160deg, var(--periwinkle) 0%, #fff 60%);
+text-align: center;
+padding: 20px;
+}
+
+.landing .logo-cursive { font-size: 3rem; margin-bottom: 10px; }
+
+.typewriter {
+font-size: 2.2rem;
+font-style: italic;
+white-space: nowrap;
+overflow: hidden;
+}
+
+.typewriter .brand-word {
+font-weight: 700;
+font-style: normal;
+color: var(--orchid);
+}
+
+.landing-buttons {
+margin-top: 36px;
+display: flex;
+gap: 16px;
+}
+
+/* auth forms, reused from earlier tasks */
+.auth-box {
+max-width: 420px;
+margin: 40px auto;
+padding: 24px;
+border: 1px solid var(--periwinkle);
+border-radius: 10px;
+}
+
+.auth-box label {
+display: block;
+margin-bottom: 14px;
+font-weight: 500;
+}
+
+.auth-box input, .auth-box select {
+width: 100%;
+padding: 8px;
+margin-top: 4px;
+border: 1px solid #ccc;
+border-radius: 6px;
+}
+
+.alert-error { color: #b00020; background: #fde8ea; padding: 10px; border-radius: 6px; margin-bottom: 14px; }
+.alert-success { color: #1b7a3c; background: #e6f6ea; padding: 10px; border-radius: 6px; margin-bottom: 14px; }
+
+.app-body {
+align-items: flex-start; }
+
+.main-content table {
+width: auto;
+table-layout: auto;
+border-collapse: collapse;
+}
+
+.main-content table th,
+.main-content table td {
+vertical-align: top;
+text-align: left;
+min-width: 80px;
+}
+
+.main-content form {
+margin-bottom: 24px;
+}
+
+.main-content h2,
+.main-content h3 {
+margin-top: 0;
+}
+
+.main-content > h2,
+.main-content > h3 {
+margin-top: 24px;
+margin-bottom: 12px;
+}
+
+.main-content > form {
+margin-bottom: 32px;
+}
