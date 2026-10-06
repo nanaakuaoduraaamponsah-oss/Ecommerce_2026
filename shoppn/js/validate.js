@@ -3,8 +3,8 @@ const signupForm = document.getElementById('signup-form');
 if (signupForm) {
     signupForm.addEventListener('submit', function (evt) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^[0-9+\-\s]{7,15}$/;
-    const pwdPattern   = /^(?=.*\d).{8,}$/;
+    const pwdPattern = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(password);
+
 
     const emailField   = signupForm.querySelector('[name="email_addr"]');
     const contactField = document.getElementById('signup-contact');

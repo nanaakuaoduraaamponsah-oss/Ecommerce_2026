@@ -16,7 +16,7 @@ $contactNo = trim(strip_tags($_POST['contact_no'] ?? ''));
 $errors = [];
 if (strlen($fullName) < 2)                   $errors[] = 'Name is too short.';
 if (!$emailAddr || strlen($emailAddr) > 50)  $errors[] = 'Please enter a valid email.';
-if (strlen($rawPass) < 8)                    $errors[] = 'Password must be at least 8 characters.';
+if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d).{8,}$/', $rawPass)) $errors[] = 'Password needs at least 8 characters, including a letter and a number.';
 if (strlen($country) > 30)                   $errors[] = 'Country is too long.';
 if (strlen($city) > 30)                      $errors[] = 'City is too long.';
 if (strlen($contactNo) > 15)                 $errors[] = 'Contact number is too long.';
