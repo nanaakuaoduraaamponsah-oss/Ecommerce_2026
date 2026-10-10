@@ -1,5 +1,9 @@
+
+<?php if (empty($authPage)): ?>
 </main>
 </div>
+<?php endif; ?>
+
 
 <footer class="app-footer">
 <a href="#" class="logo-cursive">shoppn</a>
@@ -17,6 +21,6 @@
     </a>
 </div>
 </footer>
-
+<script src="<?= BASE_PATH ?>/js/validate.js"></script>
 </body>
 </html>

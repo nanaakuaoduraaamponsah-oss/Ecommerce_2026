@@ -39,3 +39,29 @@ if (loginForm) {
     });
 }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const productForm = document.getElementById('product-form');
+    if (!productForm) return;
+
+    productForm.addEventListener('submit', function (evt) {
+    const problems = [];
+    const title = productForm.querySelector('[name="product_title"]').value.trim();
+    const price = parseFloat(productForm.querySelector('[name="product_price"]').value);
+    const fileInput = productForm.querySelector('[name="product_image"]');
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+
+    if (title.length < 2) problems.push('Enter a product title.');
+    if (isNaN(price) || price <= 0) problems.push('Enter a price greater than 0.');
+
+    if (fileInput.files.length) {
+        const file = fileInput.files[0];
+        if (!allowedTypes.includes(file.type)) problems.push('Image must be JPG, PNG, GIF or WEBP.');
+        if (file.size > 2 * 1024 * 1024) problems.push('Image must be 2MB or smaller.');
+    }
+
+    if (problems.length) {
+        evt.preventDefault();
+        alert(problems.join('\n'));
+    }
+    });
+});

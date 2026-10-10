@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../core/core.php';
+$authPage = true;
 include __DIR__ . '/layout/header.php';
 ?>
 <section class="auth-box">
@@ -79,7 +80,7 @@ include __DIR__ . '/layout/header.php';
 
     <label>Contact Number<input type="text" name="contact_no" id="signup-contact"></label>
 
-    <button type="submit" id="signup-btn">Create Account</button>
+    <button type="submit" id="signup-btn" class="btn-primary">Create Account</button>
 </form>
 
 <p>Already registered? <a href="login.php">Log in here</a></p>

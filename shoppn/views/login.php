@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../core/core.php';
+$authPage = true;
 include __DIR__ . '/layout/header.php';
 ?>
 <section class="auth-box">
@@ -13,7 +14,7 @@ include __DIR__ . '/layout/header.php';
 <form id="login-form" action="../actions/login_action.php" method="POST">
     <label>Email<input type="email" name="email_addr" required></label>
     <label>Password<input type="password" name="user_pass" required></label>
-    <button type="submit">Log In</button>
+    <button type="submit" class="btn-primary">Log In</button>
 </form>
 
 <p>Don't have an account? <a href="register.php">Register here</a></p>
