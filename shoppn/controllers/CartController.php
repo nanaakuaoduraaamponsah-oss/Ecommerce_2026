@@ -35,4 +35,20 @@ public function removeFromCart($product_id, $ip) {
 public function updateQty($product_id, $new_qty, $ip) {
     return $this->model->updateQty($product_id, $new_qty, $ip);
 }
+
+public function processPayment($customer_id, $ip, $reference, $amount) {
+    return $this->model->processPayment($customer_id, $ip, $reference, $amount);
+}
+
+public function getOrderById($order_id, $customer_id = null) {
+    return $this->model->getOrderById($order_id, $customer_id);
+}
+
+public function getOrderIdByReference($reference, $customer_id) {
+    return $this->model->getOrderIdByReference($reference, $customer_id);
+}
+
+public function referenceExists($reference) {
+    return $this->model->referenceExists($reference);
+}
 }
