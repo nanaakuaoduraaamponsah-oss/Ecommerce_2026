@@ -1,3 +1,4 @@
 shoppn/core/db_cred.php
 shoppn/error/error.log
 shoppn/images/products/
+core/paystack_config.php
